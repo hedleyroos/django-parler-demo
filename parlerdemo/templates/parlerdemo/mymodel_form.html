@@ -1,0 +1,16 @@
+{% load i18n %}
+{% include "admin/parler/language_tabs.html" %}
+
+<h1>{% trans "Edit me" %}</h1>
+
+Your language:
+{{ form.language }}
+<br />
+Language on request:
+{{ request.LANGUAGE_CODE }}
+<br />
+
+<form method="post">{% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Update">
+</form>
