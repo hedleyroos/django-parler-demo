@@ -12,7 +12,7 @@ class Migration(migrations.Migration):
     initial = True
 
     dependencies = [
-        ("photologue", "0012_auto_20210813_1010"),
+        ("photologue", "0010_auto_20160105_1307"),
         ("sites", "0002_alter_domain_unique"),
     ]
 

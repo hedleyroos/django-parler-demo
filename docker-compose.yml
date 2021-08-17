@@ -1,0 +1,19 @@
+version: "3.8"
+
+services:
+
+    app:
+        image: django-parler-demo:latest
+        build:
+            context: .
+            dockerfile: Dockerfile
+        networks:
+            vnet:
+                ipv4_address: 192.168.18.10
+
+networks:
+    vnet:
+        driver: bridge
+        ipam:
+            config:
+                - subnet: 192.168.18.0/24
