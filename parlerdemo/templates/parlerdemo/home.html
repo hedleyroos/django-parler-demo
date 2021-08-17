@@ -1,0 +1,10 @@
+<h1>Home</h1>
+
+Manage all objects in <a href="/admin/">admin</a>. Username admin, password local.
+
+<h2>Blogs</h2>
+{% for blog in blogs %}
+    View <a href="{% url "blog-detail" blog.pk %}">{{ blog.title }}</a>
+    |
+    Pretty edit <a href="{% url "blog-update" blog.pk %}">{{ blog.title }}</a>
+{% endfor %}

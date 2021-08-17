@@ -1,0 +1,23 @@
+{% load i18n parler_tags %}
+
+<h1>{{ object.title }}</h1>
+
+<ul>
+    {% for lang_code, title in LANGUAGES %}
+        {% get_language_info for lang_code as lang %}
+        {% get_translated_url lang_code as tr_url %}
+        {% if tr_url %}<li{% if lang_code == LANGUAGE_CODE %} class="is-selected"{% endif %}><a href="{{ tr_url }}" hreflang="{{ lang_code }}">{{ lang.name_local|capfirst }}</a></li>{% endif %}
+    {% endfor %}
+</ul>
+
+Language on request:
+{{ request.LANGUAGE_CODE }}
+<br />
+Category: {{ object.category }}
+<br />
+Sensitive: {{ object.sensitive }}
+<br />
+
+{% for photo in object.photos.all %}
+    {{ photo.admin_thumbnail }}
+{% endfor %}

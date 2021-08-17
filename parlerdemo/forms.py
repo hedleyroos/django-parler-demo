@@ -5,16 +5,10 @@ from parler.forms import TranslatableModelForm
 from parlerdemo import models
 
 
-class MyModelForm(TranslatableModelForm):
-
+class BlogForm(TranslatableModelForm):
     class Meta:
-        model = models.MyModel
+        model = models.Blog
         fields = "__all__"
-
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-        # Pretend user is from china
-        #self.fields["sensitive"].queryset = self.fields["sensitive"].queryset.filter(sites__in=[3])
 
     @property
     def language(self):

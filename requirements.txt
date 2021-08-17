@@ -1,4 +1,4 @@
--e git+https://github.com/django-parler/django-parler@master#egg=django_parler
+-e git+https://github.com/hedleyroos/django-parler@master#egg=django_parler
 asgiref==3.4.1
 Django==3.2.6
 django-photologue==3.13
